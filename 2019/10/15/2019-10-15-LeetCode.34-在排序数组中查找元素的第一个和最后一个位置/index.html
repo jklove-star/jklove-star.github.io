@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>LeetCode32.最长有效括号 | Unnatural</title>
+  <title>LeetCode.34-在排序数组中查找元素的第一个和最后一个位置 | Unnatural</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述给定一个只包含 &amp;#39;(&amp;#39; 和 &amp;#39;)&amp;#39; 的字符串，找出最长的包含有效括号的子串的长度。">
-<meta name="keywords" content="两次遍历">
+  <meta name="description" content="题目概要给定一个按照升序排列的整数数组 nums，和一个目标值 target。找出给定目标值在数组中的开始位置和结束位置。 你的算法时间复杂度必须是 O(log n) 级别。 如果数组中不存在目标值，返回 [-1, -1]。">
+<meta name="keywords" content="二分查找">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode32.最长有效括号">
-<meta property="og:url" content="http://yoursite.com/2019/10/13/2019-10-13-LeetCode32.最长有效括号/index.html">
+<meta property="og:title" content="LeetCode.34-在排序数组中查找元素的第一个和最后一个位置">
+<meta property="og:url" content="http://yoursite.com/2019/10/15/2019-10-15-LeetCode.34-在排序数组中查找元素的第一个和最后一个位置/index.html">
 <meta property="og:site_name" content="Unnatural">
-<meta property="og:description" content="问题描述给定一个只包含 &amp;#39;(&amp;#39; 和 &amp;#39;)&amp;#39; 的字符串，找出最长的包含有效括号的子串的长度。">
+<meta property="og:description" content="题目概要给定一个按照升序排列的整数数组 nums，和一个目标值 target。找出给定目标值在数组中的开始位置和结束位置。 你的算法时间复杂度必须是 O(log n) 级别。 如果数组中不存在目标值，返回 [-1, -1]。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-15T01:57:06.002Z">
+<meta property="og:updated_time" content="2019-10-15T13:20:00.652Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode32.最长有效括号">
-<meta name="twitter:description" content="问题描述给定一个只包含 &amp;#39;(&amp;#39; 和 &amp;#39;)&amp;#39; 的字符串，找出最长的包含有效括号的子串的长度。">
+<meta name="twitter:title" content="LeetCode.34-在排序数组中查找元素的第一个和最后一个位置">
+<meta name="twitter:description" content="题目概要给定一个按照升序排列的整数数组 nums，和一个目标值 target。找出给定目标值在数组中的开始位置和结束位置。 你的算法时间复杂度必须是 O(log n) 级别。 如果数组中不存在目标值，返回 [-1, -1]。">
   
     <link rel="alternative" href="/atom.xml" title="Unnatural" type="application/atom+xml">
   
@@ -174,33 +174,44 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-2019-10-13-LeetCode32.最长有效括号" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-2019-10-15-LeetCode.34-在排序数组中查找元素的第一个和最后一个位置" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode32.最长有效括号
+      LeetCode.34-在排序数组中查找元素的第一个和最后一个位置
     </h1>
   
 
         
-        <a href="/2019/10/13/2019-10-13-LeetCode32.最长有效括号/" class="archive-article-date">
-  	<time datetime="2019-10-13T10:57:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-13</time>
+        <a href="/2019/10/15/2019-10-15-LeetCode.34-在排序数组中查找元素的第一个和最后一个位置/" class="archive-article-date">
+  	<time datetime="2019-10-15T05:23:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>给定一个只包含 <code>&#39;(&#39;</code> 和 <code>&#39;)&#39;</code> 的字符串，找出最长的包含有效括号的子串的长度。</p>
+        <h3 id="题目概要"><a href="#题目概要" class="headerlink" title="题目概要"></a>题目概要</h3><p>给定一个按照升序排列的整数数组 <code>nums</code>，和一个目标值 <code>target</code>。找出给定目标值在数组中的开始位置和结束位置。</p>
+<p>你的算法时间复杂度必须是 <code>O(log n)</code> 级别。</p>
+<p>如果数组中不存在目标值，返回 <code>[-1, -1]</code>。</p>
 <a id="more"></a>
 
-<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>对字符串进行左右两次遍历，取两次遍历中次数多的为解；</p>
-<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">longestValidParentheses</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> left=<span class="number">0</span>,mark=<span class="number">0</span>,bmark=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)<span class="comment">//进行左循环遍历</span></span><br><span class="line">        &#123;</span><br><span class="line">            bmark=mark;</span><br><span class="line">            mark=max(<span class="number">0</span>,mark+((s[i]==<span class="string">'('</span>)?<span class="number">1</span>:<span class="number">-1</span>));</span><br><span class="line">            <span class="keyword">if</span>(mark==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(bmark&gt;<span class="number">0</span>)</span><br><span class="line">                    res=max(res,i-left+<span class="number">1</span>);</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    left=i+<span class="number">1</span><span class="comment">//left位置在不规则字符的后面一位，在可能规则字符的第一位；</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        mark=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right=s.size()<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=s.size()<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">        &#123;</span><br><span class="line">            bmark=mark;</span><br><span class="line">            mark=max(<span class="number">0</span>,mark+((s[i]==<span class="string">')'</span>)?<span class="number">1</span>:<span class="number">-1</span>));</span><br><span class="line">            <span class="keyword">if</span>(mark==<span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(bmark&gt;<span class="number">0</span>)</span><br><span class="line">                    res=max(res,right-i+<span class="number">1</span>);</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    right=i<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;；</span><br></pre></td></tr></table></figure>
+<h4 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h4><p>示例 1:</p>
+<p><code>输入: nums = [5,7,7,8,8,10],</code></p>
+<p> <code>target = 8</code></p>
+<p><code>输出: [3,4]</code></p>
+<p>示例 2:</p>
+<p><code>输入: nums = [5,7,7,8,8,10],</code></p>
+<p><code>target = 6</code></p>
+<p><code>输出: [-1,-1]</code></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>我首先想到的就是直接走一遍循环，对结果进行恰当截取就可以，然后这题也可以用二分来做，(用二分的时间复杂度比一遍遍历都多)，写一下用二分来做的结果。</p>
+<h4 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h4><p>常规的二分法返回的是对应元素的下标，当<code>nums[mid]==target</code>时，返回<code>mid</code>下标，但此时我们对这句话进行处理，当找到<code>target</code>时，不进行立即返回，而是继续缩小区间，达到<code>right</code>值为最接近<code>target</code>的左侧左侧则搜索完毕，右侧同理。</p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; searchRange(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span> n=nums.size();</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> &#123;<span class="number">-1</span>,<span class="number">-1</span>&#125;;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">int</span> left=<span class="number">0</span>,right=n<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left&lt;=right)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> mid=(left+right)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(target==nums[mid])</span><br><span class="line">                right=mid<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(target&gt;nums[mid])</span><br><span class="line">                left=mid+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(target&lt;nums[mid])</span><br><span class="line">                right=mid<span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(left==nums.size())</span><br><span class="line">            <span class="keyword">return</span> &#123;<span class="number">-1</span>,<span class="number">-1</span>&#125;;</span><br><span class="line">        <span class="keyword">if</span>(nums[left]==target)</span><br><span class="line">            res.push_back(left);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> &#123;<span class="number">-1</span>,<span class="number">-1</span>&#125;;</span><br><span class="line">        left=<span class="number">0</span>;</span><br><span class="line">        right=n;</span><br><span class="line">        <span class="keyword">while</span>(left&lt;right)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> mid=(left+right)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(target==nums[mid])</span><br><span class="line">                left=mid+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(target&gt;nums[mid])</span><br><span class="line">                left=mid+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(target&lt;nums[mid])</span><br><span class="line">                right=mid; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(nums[left<span class="number">-1</span>]==target)</span><br><span class="line">            res.push_back(left<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">            </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h2 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h2><p>为什么采用两遍遍历，因为是括号，左右的判断不一样，有的问题，例：“（（（）”若只看左括号就会得不到解，同理右括号，因为循环设计的对于多个重复括号处理无法统一，left与right设计的很巧妙，我概括为在不规则字符的后面一位，在可能规则字符的第一位，值得学习。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>对于二分搜索，看起来很简单，但对于细节的把控需要多加深思，不是漏个等号就是少加个1，需要真正仔细梳理。</p>
 
       
 
@@ -245,7 +256,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">两次遍历</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">二分查找</a>
         		</li>
       		
 		</ul>
@@ -301,7 +312,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/13/2019-10-13-LeetCode32.最长有效括号/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/15/2019-10-15-LeetCode.34-在排序数组中查找元素的第一个和最后一个位置/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -316,18 +327,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/14/2019-10-14-LeetCode33.搜素旋转排序数组/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/10/16/2019-10-16-LeetCode.52-N皇后II/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          LeetCode33.搜素旋转排序数组
+          LeetCode.52-N皇后II
         
       </div>
     </a>
   
   
-    <a href="/2019/10/13/2019-10-13-LeetCode1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode1</div>
+    <a href="/2019/10/14/2019-10-14-LeetCode33.搜素旋转排序数组/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode33.搜素旋转排序数组</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -354,7 +365,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#问题描述"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码实现"><span class="toc-number">3.</span> <span class="toc-text">代码实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#随笔"><span class="toc-number">3.1.</span> <span class="toc-text">随笔</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目概要"><span class="toc-number">1.</span> <span class="toc-text">题目概要</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例："><span class="toc-number">1.1.</span> <span class="toc-text">示例：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#二分法"><span class="toc-number">2.1.</span> <span class="toc-text">二分法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码实现"><span class="toc-number">2.2.</span> <span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结"><span class="toc-number">3.</span> <span class="toc-text">小结</span></a></li></ol>
                     </div>
                 </span>
             </div>
